@@ -10,16 +10,22 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".EditToDo"></activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".TodoHomeActivity" />
-        <activity android:name=".RegisterActivity" >
+        android:theme="@style/AppTheme"
+        android:screenOrientation="portrait"
+        >
+
+        <activity android:name=".EditToDo"
+            ></activity>
+        <activity android:name=".LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".TodoHomeActivity" />
+        <activity android:name=".NewTask"/>
+        <activity android:name=".RegisterActivity" >
         </activity>
     </application>
 

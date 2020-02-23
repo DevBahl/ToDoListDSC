@@ -27,6 +27,7 @@ class LoginActivity : AppCompatActivity() {
 
         val email = login_email.text.toString()
         val password = login_password.text.toString()
+        val slicedemail:String? = email.substring(0,email.indexOf('@'))
 
         if (email.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Fill the details", Toast.LENGTH_SHORT).show()
@@ -38,6 +39,7 @@ class LoginActivity : AppCompatActivity() {
                 if(!it.isSuccessful) return@addOnCompleteListener
 
                 val intent = Intent(this,TodoHomeActivity::class.java)
+                intent.putExtra("username",slicedemail)
                 startActivity(intent)
                 finish()
             }

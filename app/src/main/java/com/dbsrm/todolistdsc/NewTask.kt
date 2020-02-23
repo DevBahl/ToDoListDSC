@@ -37,22 +37,26 @@ class NewTask : AppCompatActivity() {
         datedoes = findViewById(R.id.datedoes)
         btnSaveTask = findViewById(R.id.btnSaveTask)
         btnCancel = findViewById(R.id.btnCancel)
+        val intent = getIntent()
+        val name = intent.getStringExtra("username")
         btnSaveTask!!.setOnClickListener(object: View.OnClickListener {
             override fun onClick(v:View) {
                 // insert data to database
-                reference = FirebaseDatabase.getInstance().getReference().child("DoesApp").child("Does" + doesNum)
+                reference = FirebaseDatabase.getInstance().getReference().child("DoesApp").child(name).child("Does" + doesNum)
                 reference!!.addValueEventListener(object: ValueEventListener {
                     override fun onDataChange(dataSnapshot: DataSnapshot) {
                         dataSnapshot.getRef().child("titledoes").setValue(titledoes!!.getText().toString())
                         dataSnapshot.getRef().child("descdoes").setValue(descdoes!!.getText().toString())
                         dataSnapshot.getRef().child("datedoes").setValue(datedoes!!.getText().toString())
                         dataSnapshot.getRef().child("keydoes").setValue(keydoes)
-                        val a = Intent(this@NewTask, TodoHomeActivity::class.java)
-                        startActivity(a)
+
                     }
                     override fun onCancelled(databaseError: DatabaseError) {
                     }
+
                 })
+                val a = Intent(this@NewTask, TodoHomeActivity::class.java)
+                startActivity(a)
             }
         })
     }

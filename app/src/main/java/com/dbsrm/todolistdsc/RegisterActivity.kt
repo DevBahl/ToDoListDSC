@@ -29,8 +29,11 @@ class RegisterActivity : AppCompatActivity() {
 
         val email = email.text.toString()
         val password = password.text.toString()
+        val name = name.text.toString()
 
-        if (email.isEmpty() || password.isEmpty()) {
+        val slicedemail:String? = email.substring(0,email.indexOf('@'))
+
+        if (email.isEmpty() || password.isEmpty() || name.isEmpty()) {
             Toast.makeText(this, "Fill the details", Toast.LENGTH_SHORT).show()
             return
         }
@@ -38,27 +41,15 @@ class RegisterActivity : AppCompatActivity() {
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener {
                 if (!it.isSuccessful) return@addOnCompleteListener
-
+                FirebaseDatabase.getInstance().getReference().child("DoesApp").child(slicedemail.toString()).setValue("")
                 val intent = Intent(this,TodoHomeActivity::class.java)
+                intent.putExtra("username",slicedemail)
                 startActivity(intent)
-                //saveUserToFirebaseDatabase()
                 finish()
             }
             .addOnFailureListener {
                 Toast.makeText(this, "failed to create user: ${it.message}", Toast.LENGTH_SHORT).show()
             }
     }
-
-    private fun saveUserToFirebaseDatabase() {
-        val uid = FirebaseAuth.getInstance().uid ?: ""
-        val ref = FirebaseDatabase.getInstance().getReference("users")
-
-        val user = User(uid,name.text.toString())
-        ref.setValue(name.text.toString())
-            .addOnSuccessListener {
-                Log.d("RegisterActivity","Successfully registered the user")
-            }
-    }
 }
 
-class User(var uid: String="", var name: String="")

@@ -9,13 +9,15 @@ public class ToDoes {
 
     var keydoes:String? = null
 
+    var name:String?=null
 
-    fun ToDoes() {}
-    fun ToDoes(titledoes:String, datedoes:String, descdoes:String, keydoes:String) {
+
+    fun ToDoes(titledoes:String, datedoes:String, descdoes:String, keydoes:String,name:String) {
         this.titledoes = titledoes
         this.datedoes = datedoes
         this.descdoes = descdoes
         this.keydoes = keydoes
+        this.name=name
     }
 
     fun getTitle(): String? {
@@ -48,5 +50,9 @@ public class ToDoes {
 
     fun setKey(keydoes:String?) {
         this.keydoes = keydoes
+    }
+
+    fun getUname():String?{
+        return name
     }
 }
