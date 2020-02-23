@@ -14,7 +14,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/titledo"
+            android:id="@+id/titledoes"
             android:layout_marginTop="19dp"
             android:textSize="22sp"
             android:textColor="#000C5D"
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/descdo"
+            android:id="@+id/descdoes"
             android:textSize="18sp"
             android:textColor="#ADADAD"
             android:layout_marginTop="8dp"
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/datedo"
+            android:id="@+id/datedoes"
             android:textSize="18sp"
             android:textColor="#F63EA5"
             android:layout_marginTop="8dp"

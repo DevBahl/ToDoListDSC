@@ -14,7 +14,7 @@
         <activity android:name=".EditToDo"></activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".TodoHomeActivity" />
-        <activity android:name=".RegisterActivity">
+        <activity android:name=".RegisterActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

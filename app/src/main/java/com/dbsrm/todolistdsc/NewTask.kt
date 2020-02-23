@@ -9,7 +9,6 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.*
-import kotlinx.android.synthetic.main.item_do.*
 import java.util.*
 
 class NewTask : AppCompatActivity() {
@@ -44,9 +43,9 @@ class NewTask : AppCompatActivity() {
                 reference = FirebaseDatabase.getInstance().getReference().child("DoesApp").child("Does" + doesNum)
                 reference!!.addValueEventListener(object: ValueEventListener {
                     override fun onDataChange(dataSnapshot: DataSnapshot) {
-                        dataSnapshot.getRef().child("titledoes").setValue(titledo.getText().toString())
-                        dataSnapshot.getRef().child("descdoes").setValue(descdo.getText().toString())
-                        dataSnapshot.getRef().child("datedoes").setValue(datedo.getText().toString())
+                        dataSnapshot.getRef().child("titledoes").setValue(titledoes!!.getText().toString())
+                        dataSnapshot.getRef().child("descdoes").setValue(descdoes!!.getText().toString())
+                        dataSnapshot.getRef().child("datedoes").setValue(datedoes!!.getText().toString())
                         dataSnapshot.getRef().child("keydoes").setValue(keydoes)
                         val a = Intent(this@NewTask, TodoHomeActivity::class.java)
                         startActivity(a)
@@ -56,19 +55,6 @@ class NewTask : AppCompatActivity() {
                 })
             }
         })
-        // import font
-        val MLight = Typeface.createFromAsset(getAssets(), "fonts/ML.ttf")
-        val MMedium = Typeface.createFromAsset(getAssets(), "fonts/MM.ttf")
-        // customize font
-        titlepage!!.setTypeface(MMedium)
-        addtitle!!.setTypeface(MLight)
-        titledoes!!.setTypeface(MMedium)
-        adddesc!!.setTypeface(MLight)
-        descdoes!!.setTypeface(MMedium)
-        adddate!!.setTypeface(MLight)
-        datedoes!!.setTypeface(MMedium)
-        btnSaveTask!!.setTypeface(MMedium)
-        btnCancel!!.setTypeface(MLight)
     }
 
 

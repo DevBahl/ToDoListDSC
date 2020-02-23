@@ -1,52 +1,52 @@
 package com.dbsrm.todolistdsc
 
 public class ToDoes {
-    var titledo:String? = null
+    var titledoes:String? = null
 
-    var datedo:String? = null
+    var datedoes:String? = null
 
-    var descdo:String? = null
+    var descdoes:String? = null
 
-    var keydo:String? = null
+    var keydoes:String? = null
 
 
     fun ToDoes() {}
-    fun ToDoes(titledo:String, datedo:String, descdo:String, keydo:String) {
-        this.titledo = titledo
-        this.datedo = datedo
-        this.descdo = descdo
-        this.keydo = keydo
+    fun ToDoes(titledoes:String, datedoes:String, descdoes:String, keydoes:String) {
+        this.titledoes = titledoes
+        this.datedoes = datedoes
+        this.descdoes = descdoes
+        this.keydoes = keydoes
     }
 
     fun getTitle(): String? {
-        return titledo
+        return titledoes
     }
 
-    fun setTitle(titledo:String?) {
-        this.titledo = titledo
+    fun setTitle(titledoes:String?) {
+        this.titledoes = titledoes
     }
 
     fun getDate(): String? {
-        return datedo
+        return datedoes
     }
 
-    fun setDate(datedo:String?) {
-        this.datedo = datedo
+    fun setDate(datedoes:String?) {
+        this.datedoes = datedoes
     }
 
     fun getDesc(): String? {
-        return descdo
+        return descdoes
     }
 
-    fun setDesc(descdo:String?) {
-        this.descdo = descdo
+    fun setDesc(descdoes:String?) {
+        this.descdoes = descdoes
     }
 
     fun getKey(): String? {
-        return keydo
+        return keydoes
     }
 
-    fun setKey(keydo:String?) {
-        this.keydo = keydo
+    fun setKey(keydoes:String?) {
+        this.keydoes = keydoes
     }
 }

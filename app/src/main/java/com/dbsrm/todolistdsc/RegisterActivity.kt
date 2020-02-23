@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.auth.User
 import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity() {
@@ -40,10 +41,24 @@ class RegisterActivity : AppCompatActivity() {
 
                 val intent = Intent(this,TodoHomeActivity::class.java)
                 startActivity(intent)
+                //saveUserToFirebaseDatabase()
                 finish()
             }
             .addOnFailureListener {
                 Toast.makeText(this, "failed to create user: ${it.message}", Toast.LENGTH_SHORT).show()
             }
     }
+
+    private fun saveUserToFirebaseDatabase() {
+        val uid = FirebaseAuth.getInstance().uid ?: ""
+        val ref = FirebaseDatabase.getInstance().getReference("users")
+
+        val user = User(uid,name.text.toString())
+        ref.setValue(name.text.toString())
+            .addOnSuccessListener {
+                Log.d("RegisterActivity","Successfully registered the user")
+            }
+    }
 }
+
+class User(var uid: String="", var name: String="")

@@ -30,7 +30,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="My Does"
+                    android:text="To Does"
                     android:textColor="#FFF"
                     android:textSize="32sp" />
 
@@ -73,15 +73,15 @@
 
     </LinearLayout>
 
-    <androidx.appcompat.app.AlertController.RecycleListView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/ourdoes"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="534dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="-60dp"
         android:layout_marginRight="16dp">
 
-    </androidx.appcompat.app.AlertController.RecycleListView>
+    </androidx.recyclerview.widget.RecyclerView>
 
     <TextView
         android:id="@+id/endpage"
