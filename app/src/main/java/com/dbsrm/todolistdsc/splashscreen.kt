@@ -28,7 +28,7 @@ class splashscreen : AppCompatActivity() {
                 imageView6.visibility = View.GONE
                 startActivity(Intent(this,walkthrmain::class.java))
                 finish()
-            },1000)
-        },2000)
+            },500)
+        },1200)
     }
 }
