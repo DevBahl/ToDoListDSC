@@ -41,7 +41,7 @@ class TodoHomeActivity : AppCompatActivity() {
 
         val intent = getIntent()
         val name = intent.getStringExtra("username")
-        titlepage!!.setText("Hello "+name.toString())
+        titlepage!!.setText("Hello!    "+name.toString())
        // val sharedprefrance:SharedPreferences= this.getSharedPreferences(sharedPefFile,Context.MODE_PRIVATE)
        // val editor:SharedPreferences.Editor=sharedprefrance.edit()
         //editor.putString("name",name.toString())
@@ -56,6 +56,7 @@ class TodoHomeActivity : AppCompatActivity() {
 
         ourdoes = findViewById(R.id.ourdoes)
         ourdoes!!.setLayoutManager(LinearLayoutManager(this))
+        //ourdoes1!!.setLayoutManager(LinearLayoutManager(this))
         list = ArrayList<ToDoes>()
 
             reference = FirebaseDatabase.getInstance().getReference().child("DoesApp").child(name)
@@ -69,6 +70,7 @@ class TodoHomeActivity : AppCompatActivity() {
                     }
                    doesAdapter = ToDoAdapter(this@TodoHomeActivity, list!!)
                     ourdoes!!.setAdapter(doesAdapter)
+                    //ourdoes1!!.setAdapter(doesAdapter)
                     doesAdapter!!.notifyDataSetChanged()
 
                 }

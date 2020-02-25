@@ -21,7 +21,7 @@ class ToDoAdapter(c: Context, p: ArrayList<ToDoes>) :
 
     @NonNull
     override fun onCreateViewHolder(@NonNull viewGroup: ViewGroup, i: Int): MyViewHolder {
-        return MyViewHolder(LayoutInflater.from(context).inflate(R.layout.item_do, viewGroup, false
+        return MyViewHolder(LayoutInflater.from(context).inflate(R.layout.item_do2, viewGroup, false
             )
         )
     }

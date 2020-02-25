@@ -8,7 +8,7 @@ import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
-
+    var uemail:String ?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -20,6 +20,17 @@ class LoginActivity : AppCompatActivity() {
         signin_button.setOnClickListener {
             signinUser()
         }
+
+        /*val user = FirebaseAuth.getInstance().currentUser
+        if (user != null) {
+            user?.let {
+                val uemail = user.email.toString()
+            }
+            val slicedemail:String? = uemail!!.substring(0,uemail!!.indexOf('@'))
+            val intent = Intent(this,TodoHomeActivity::class.java)
+            intent.putExtra("username",slicedemail)
+            startActivity(intent)
+        }*/
 
     }
 

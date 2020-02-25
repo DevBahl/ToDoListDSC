@@ -29,11 +29,11 @@ class RegisterActivity : AppCompatActivity() {
 
         val email = email.text.toString()
         val password = password.text.toString()
-        val name = name.text.toString()
+       // val name = name.text.toString()
 
         val slicedemail:String? = email.substring(0,email.indexOf('@'))
 
-        if (email.isEmpty() || password.isEmpty() || name.isEmpty()) {
+        if (email.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Fill the details", Toast.LENGTH_SHORT).show()
             return
         }

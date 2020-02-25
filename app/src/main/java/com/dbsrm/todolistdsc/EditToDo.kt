@@ -40,7 +40,6 @@ class EditToDo : AppCompatActivity() {
 
         btnupdate!!.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View) {
-                // insert data to database
                 reference!!.addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(dataSnapshot: DataSnapshot) {
                         dataSnapshot.getRef().child("DoesApp").child(name.toString()).child("titledoes")

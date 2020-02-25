@@ -37,11 +37,15 @@ class NewTask : AppCompatActivity() {
         datedoes = findViewById(R.id.datedoes)
         btnSaveTask = findViewById(R.id.btnSaveTask)
         btnCancel = findViewById(R.id.btnCancel)
+
+        btnCancel!!.setOnClickListener {
+            val intent = Intent(this,TodoHomeActivity::class.java)
+            startActivity(intent)
+        }
         val intent = getIntent()
         val name = intent.getStringExtra("username")
         btnSaveTask!!.setOnClickListener(object: View.OnClickListener {
             override fun onClick(v:View) {
-                // insert data to database
                 reference = FirebaseDatabase.getInstance().getReference().child("DoesApp").child(name).child("Does" + doesNum)
                 reference!!.addValueEventListener(object: ValueEventListener {
                     override fun onDataChange(dataSnapshot: DataSnapshot) {
