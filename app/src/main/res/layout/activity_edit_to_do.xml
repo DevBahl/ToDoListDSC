@@ -1,169 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4F4F4"
+    android:background="#4E4E4E"
     tools:context=".TodoHomeActivity">
 
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:background="@color/colorPrimaryDark"
-        android:layout_height="198dp">
-
-        <TextView
-            android:id="@+id/titlepage"
-            android:layout_marginTop="20dp"
-            android:textSize="26sp"
-            android:textColor="#FFF"
-            android:text="Edit ToDo"
-            android:textAlignment="center"
-            android:layout_marginBottom="18dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <View
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:background="#131E69"
-            android:layout_height="1dp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="-60dp"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/imageViewss5"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:orientation="vertical"
-        android:paddingBottom="22dp"
-        android:paddingTop="22dp">
+        android:layout_marginBottom="450dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back2" />
 
-        <LinearLayout
-            android:layout_marginRight="16dp"
-            android:layout_marginLeft="16dp"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/titlepage"
+        android:layout_width="204dp"
+        android:layout_height="108dp"
+        android:layout_marginTop="68dp"
+        android:text="Edit ToDo"
+        android:textColor="#ffffff"
+        android:textFontWeight="900"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/addtitle"
-                android:textSize="18sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:text="Add Title"
-                android:layout_marginBottom="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/addtitle"
+        android:layout_width="80dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="32dp"
+        android:text="Add Title"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titlepage" />
 
-            <EditText
-                android:id="@+id/titledoes"
-                android:inputType="text"
-                android:background="@color/colorAccent"
-                android:paddingLeft="12dp"
-                android:textColorHint="#B5B5B5"
-                android:textColor="@color/colorPrimaryDark"
-                android:hint="What You Do?"
-                android:layout_width="match_parent"
-                android:layout_height="55dp" />
+    <EditText
+        android:id="@+id/titledoes"
+        android:layout_width="349dp"
+        android:layout_height="63dp"
+        android:hint="Task Name"
+        android:inputType="text"
+        android:textColor="#080101"
+        android:textColorHint="#080101"
+        android:textFontWeight="800"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.258"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addtitle" />
 
-        </LinearLayout>
+    <TextView
+        android:id="@+id/adddesc"
+        android:layout_width="102dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="24dp"
+        android:text="Description"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titledoes" />
 
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginLeft="16dp"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/descdoes"
+        android:layout_width="357dp"
+        android:layout_height="122dp"
+        android:hint="Task Description"
+        android:inputType="text"
+        android:maxLength="50"
+        android:textColor="#080101"
+        android:textFontWeight="800"
+        android:textColorHint="#080101"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.274"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adddesc" />
 
-            <TextView
-                android:id="@+id/adddesc"
-                android:textSize="18sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:text="Description"
-                android:layout_marginBottom="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/adddate"
+        android:layout_width="102dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="24dp"
+        android:text="Schedule"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descdoes" />
 
-            <EditText
-                android:id="@+id/descdoes"
-                android:inputType="text"
-                android:background="@color/colorAccent"
-                android:paddingLeft="12dp"
-                android:textColorHint="#B5B5B5"
-                android:maxLength="25"
-                android:textColor="@color/colorPrimaryDark"
-                android:hint="How to?"
-                android:layout_width="match_parent"
-                android:layout_height="55dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginLeft="16dp"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/adddate"
-                android:textSize="18sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:text="Timeline"
-                android:layout_marginBottom="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <EditText
-                android:id="@+id/datedoes"
-                android:inputType="text"
-                android:background="@color/colorAccent"
-                android:paddingLeft="12dp"
-                android:textColorHint="#B5B5B5"
-                android:textColor="@color/colorPrimaryDark"
-                android:hint="When will?"
-                android:layout_width="match_parent"
-                android:layout_height="55dp" />
-
-        </LinearLayout>
-
-
-    </LinearLayout>
+    <EditText
+        android:id="@+id/datedoes"
+        android:layout_width="349dp"
+        android:layout_height="63dp"
+        android:hint="Date and Time"
+        android:inputType="text"
+        android:textColor="#080101"
+        android:textColorHint="#080101"
+        android:textFontWeight="800"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.258"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adddate" />
 
     <Button
         android:id="@+id/btnupdate"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/createbtnback"
         android:text="Update"
-        android:textColor="#FFF"
         android:textAllCaps="false"
-        android:background="@color/colorAccent"
+        android:textColor="#080101"
+        android:textFontWeight="800"
         android:textSize="22sp"
-        android:layout_width="match_parent"
-        android:layout_height="55dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/datedoes" />
 
     <Button
         android:id="@+id/btndelete"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="14dp"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/createbtnback"
         android:text="Delete"
-        android:textColor="#AFAFAF"
         android:textAllCaps="false"
-        android:background="@color/colorAccent"
+        android:textColor="#080101"
         android:textSize="22sp"
-        android:layout_width="match_parent"
-        android:layout_height="55dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnupdate" />
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,13 +9,15 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:screenOrientation="portrait">
-
-        <activity android:name=".EditToDo"
-            ></activity>
-        <activity android:name=".LoginActivity" >
+        android:theme="@style/AppTheme">
+        <activity android:name=".secondwalkthrfragment" ></activity>
+        <activity android:name=".firstwalkthrfragment" />
+        <activity android:name=".EditToDo" />
+        <activity android:name=".LoginActivity" />
+            <activity android:name=".walkthrmain"/>
+                <activity android:name=".splashscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,9 +25,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".TodoHomeActivity" />
-        <activity android:name=".NewTask"/>
-        <activity android:name=".RegisterActivity" >
-        </activity>
+        <activity android:name=".NewTask" />
+        <activity android:name=".RegisterActivity" />
     </application>
 
 </manifest>

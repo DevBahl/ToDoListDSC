@@ -28,9 +28,10 @@ class EditToDo : AppCompatActivity() {
         reference = FirebaseDatabase.getInstance().getReference().child("DoesApp")
             .child("Does" + keykeyDoes)
 
+
         btndelete!!.setOnClickListener {
                 reference!!.removeValue().addOnCompleteListener {
-                    if(!it.isSuccessful) return@addOnCompleteListener
+                    if(it.isSuccessful) return@addOnCompleteListener
 
                     else{
                         Toast.makeText(this,"Failed to delete",Toast.LENGTH_SHORT).show()
@@ -38,7 +39,7 @@ class EditToDo : AppCompatActivity() {
                 }
             }
 
-        btnupdate!!.setOnClickListener(object : View.OnClickListener {
+       /* btnupdate!!.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View) {
                 reference!!.addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -57,6 +58,10 @@ class EditToDo : AppCompatActivity() {
                     }
                 })
             }
-        })
+        })*/
+
+        btnupdate!!.setOnClickListener {
+            Toast.makeText(this,"Still Working on it",Toast.LENGTH_LONG).show()
+        }
     }
 }

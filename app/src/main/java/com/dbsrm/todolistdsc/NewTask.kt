@@ -1,7 +1,6 @@
 package com.dbsrm.todolistdsc
 
 import android.content.Intent
-import android.graphics.Typeface
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -36,12 +35,7 @@ class NewTask : AppCompatActivity() {
         descdoes = findViewById(R.id.descdoes)
         datedoes = findViewById(R.id.datedoes)
         btnSaveTask = findViewById(R.id.btnSaveTask)
-        btnCancel = findViewById(R.id.btnCancel)
 
-        btnCancel!!.setOnClickListener {
-            val intent = Intent(this,TodoHomeActivity::class.java)
-            startActivity(intent)
-        }
         val intent = getIntent()
         val name = intent.getStringExtra("username")
         btnSaveTask!!.setOnClickListener(object: View.OnClickListener {

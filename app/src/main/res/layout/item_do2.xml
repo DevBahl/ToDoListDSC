@@ -3,9 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/cardviewback">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingBottom="30dp"
+    >
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
@@ -16,7 +17,11 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.187">
+        app:layout_constraintVertical_bias="0.187"
+        app:cardElevation="5dp"
+        app:cardBackgroundColor="#707070"
+        app:cardCornerRadius="25dp"
+        >
 
         <TextView
             android:id="@+id/titledoes"
@@ -24,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Code For DSC"
+            android:paddingLeft="10dp"
             android:textColor="#000C5D"
             android:textSize="22sp" />
 
@@ -32,6 +38,7 @@
             android:layout_width="279dp"
             android:layout_height="47dp"
             android:layout_marginTop="60dp"
+            android:paddingLeft="10dp"
             android:text="Almost Done coding "
             android:textColor="#ADADAD"
             android:textSize="16sp" />
@@ -43,6 +50,7 @@
             android:layout_marginTop="120dp"
             android:gravity="right"
             android:text="Today"
+            android:paddingLeft="10dp"
             android:textColor="#F63EA5"
             android:textSize="16sp" />
 
